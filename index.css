@@ -1,5 +1,188 @@
 /* Design : https://www.figma.com/file/Hdgwo69Dym9vVsxbuPbl0h/Mobile-Restaurant-Menu?node-id=0%3A1 */
+/* Theme */
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Fira+Code:300,regular,500,600,700);
+
+:root {
+
+  --clr__gray-light: #a1a1aa;
+  --clr__gray-dark: #71717a;
+  --clr__black: #000000;
+  --clr__accent: #f3b022;
+  --clr__accent-light: #d5a743;
+  --clr__error: #f34822;
+  --clr__warning: #f04aff;
+
+  --shadow__embedded: inset 0px 3px 5px#4a4f57,
+    inset 0px -3px 5px hsla(0, 0%, 100%, 0.347);
+  --shadow__plated: 0px 2px 4px#4a4f57,
+    inset 0px 2.5px 1px hsla(0, 0%, 100%, 0.347);
+
+  --ff-headings: "Fira Sans";
+  --ff-primary: "Fira Code";
+  /* 
+  --ff-headings: "Fira Code";
+  --ff-primary: "Fira Sans"; */
+
+  --fs-sm: 0.8rem;
+  --fs-base: 1rem;
+  --fs-l: 1.25rem;
+  --fs-xl: 1.75rem;
+  --fs-xxl: 2.75rem;
+}
+
+@media (min-width:700px) {
+  :root {
+    --fs-sm: 1rem;
+    --fs-base: 1.25rem;
+    --fs-l: 1.75rem;
+    --fs-xl: 2.50rem;
+    --fs-xxl: 3.50rem;
+  }
+}
+
+/* General Styles */
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
+  padding: 0;
+  background-color: var(--clr__gray-dark);
+  font-family: var(--ff-primary);
 }
+
+
+/* Layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.heading {
+  font-family: var(--ff-headings);
+}
+
+/* Ordering Menu*/
+.items-container {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.card-wrapper,
+.item-hero-wrapper,
+.card-content-wrapper,
+.card-actions-wrapper,
+.action-buttons-wrapper,
+.icon-wrapper {
+  /* border: 1px solid gray; */
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+/* ! Uses Better Comments */
+/* ! Level 1: Wrapper: Main*/
+
+.card-wrapper {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 0.25em;
+  box-shadow: var(--shadow__embedded);
+  background-color: var(--clr__gray-light);
+  padding: 1.2em 1em;
+  gap: 1.25em;
+}
+
+/* ! Level 2: Wrappers: Individual */
+
+.hero-section-wrapper {
+  flex: 1;
+  min-width: 100px;
+}
+
+.card-content-wrapper {
+  flex: 2;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.card-actions-wrapper {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ! Hero Section */
+.hero-section-wrapper,
+.hero-image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image-wrapper {
+  padding: 0.45em;
+  box-shadow: var(--shadow__plated);
+}
+
+.item-hero-img {
+  display: block;
+  width: 100%;
+  border-radius: 0.25em;
+  border: 1px solid var(--clr__gray-light);
+}
+
+/* ! Card Content Section*/
+
+.item-title {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.item-description {
+  font-size: 0.7rem;
+}
+
+.item-price {
+  font-size: 1rem;
+}
+
+/* * Card Actions Elements */
+.action-buttons-wrapper {
+  gap: 0.5em;
+  flex: 1;
+}
+
+.icon-wrapper,
+.item-counter-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2em;
+}
+
+.icon-wrapper {
+  flex: 1;
+  color: #3f3f46;
+  box-shadow: 0px 2px 4px#4a4f57, inset 0px 2.5px 1px hsla(0, 0%, 100%, 0.347);
+}
+
+.icon {
+  display: block;
+}
+
+.item-counter-wrapper {
+  flex: 1;
+}
+
+.counter {
+  font-size: 1rem;
+}
+
+/* Checkout */

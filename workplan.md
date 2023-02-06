@@ -1,6 +1,6 @@
 ## Probable Steps
 
-    1. Create Header component
+    1. Create & Header component
     2. Create & Style FoodItem
     3. Manually Display 3 Food Items
     4. Render One FoodItem Using Js

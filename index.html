@@ -1,83 +1,135 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="index.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
-    <div class="app-conatiner" id="appContainer">
-      <header class="header" id="header">
-        <h1 class="heading">Mon's Diner</h1>
-        <p class="sub-heading">Order Pokemon themed food.</p>
-      </header>
-    </div>
-    <section class="food-tems-container" id="foodItemsContainer">
-      <!-- Food Items -->
-      <div class="food-item" id="foodItem">
-        <h2 class="item-emoji" id="foodEmoji">🍕</h2>
-        <div class="item-details" id="foodDetails">
-          <div class="item-name" id="itemName">Pizza</div>
-          <div class="ingredients" id="ingredients">
-            pepperoni,mushrom,mozarella
-          </div>
-          <div class="price" id="price">$10</div>
-        </div>
-        <button class="add-item-button" id="addItemButton">+</button>
-      </div>
-      <div class="food-item" id="foodItem">
-        <h2 class="item-emoji" id="foodEmoji">🍕</h2>
-        <div class="item-details" id="foodDetails">
-          <div class="item-name" id="itemName">Pizza</div>
-          <div class="ingredients" id="ingredients">
-            pepperoni,mushrom,mozarella
-          </div>
-          <div class="price" id="price">$10</div>
-        </div>
-        <button class="add-item-button" id="addItemButton">+</button>
-      </div>
-      <div class="food-item" id="foodItem">
-        <h2 class="item-emoji" id="foodEmoji">🍕</h2>
-        <div class="item-details" id="foodDetails">
-          <div class="item-name" id="itemName">Pizza</div>
-          <div class="ingredients" id="ingredients">
-            pepperoni,mushrom,mozarella
-          </div>
-          <div class="price" id="price">$10</div>
-        </div>
-        <button class="add-item-button" id="addItemButton">+</button>
-      </div>
-      <section class="order-actions-container">
-        <!-- Order Summary Component -->
-        <section class="summary-component" id="summaryComponent">
-          <h3 class="summary-heading" id="summaryHeading">Your Order</h3>
-          <div class="summary-items-container" id="summaryItemsContainer">
-            <div class="summary-item" id="summaryItem">
-              <p class="summary-item-name" id="summaryItemName">Pizza</p>
-              <button class="remove-item" id="removeItem">remove</button>
-              <p class="item-price" id="itemPrice">$10</p>
-            </div>
-            <div class="summary-item" id="summaryItem">
-              <p class="summary-item-name" id="summaryItemName">Pizza</p>
-              <button class="remove-item" id="removeItem">remove</button>
-              <p class="item-price" id="itemPrice">$10</p>
-            </div>
-          </div>
-          <div class="total-container" id="totalContainer">
-            <p class="total-price-text" id="totalPriceText">Total Price:</p>
-            <p class="order-value" id="orderValue">$20</p>
-          </div>
-          <button class="place-order" id="placeOrder">Place Order</button>
-        </section>
-        <!-- Rating Component -->
-        <section class="rating-component" id="ratingComponent">
-          <p class="thanks-message" id="thanksMessage">
-            Thanks, Blastoise! Your order is on the way!
-          </p>
-          <div class="rating" id="rating">🍔 🍔 🍔 🍔 🍔</div>
-          <p class="rating-message" id="ratingMessage">Rate your Order!</p>
-        </section>
-      </section>
-    </section>
 
+<head>
+  <link rel="stylesheet" href="index.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.1.2/typicons.css" />
+
+</head>
+
+<body>
+  <div class="app-container" id="appContainer">
+    <header class="header" id="header">
+      <h1 class="heading">Mon's Diner</h1>
+      <p class="sub-heading">Order Pokemon themed food.</p>
+    </header>
+    <section class="items-container" id="foodItemsContainer">
+      <!-- Food Items -->
+      <div class="card-wrapper" id="card">
+        <div class="hero-section-wrapper">
+          <div class="hero-image-wrapper">
+            <img src="./img/burger_hero_big.webp" class="item-hero-img" alt="item-hero-image" />
+          </div>
+        </div>
+        <div class="card-content-wrapper">
+          <div class="item-title"><span>Cheeseburgers</span></div>
+          <div class="item-description">
+            <span>In-house sauce, flaming chicken, and lettuce.</span>
+          </div>
+          <div class="item-price">$10</div>
+        </div>
+        <div class="card-actions-wrapper">
+          <div class="action-buttons-wrapper">
+            <div class="icon-wrapper">
+              <span class="typcn typcn-minus icon"></span>
+            </div>
+            <div class="item-counter-wrapper">
+              <span class="counter">2</span>
+            </div>
+            <div class="icon-wrapper">
+              <span class="typcn typcn-plus icon"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-wrapper" id="card">
+        <div class="hero-section-wrapper">
+          <div class="hero-image-wrapper">
+            <img src="./img/burger_hero_big.webp" class="item-hero-img" alt="item-hero-image" />
+          </div>
+        </div>
+        <div class="card-content-wrapper">
+          <div class="item-title"><span>Cheeseburgers</span></div>
+          <div class="item-description">
+            <span>In-house sauce, flaming chicken, and lettuce.</span>
+          </div>
+          <div class="item-price">$10</div>
+        </div>
+        <div class="card-actions-wrapper">
+          <div class="action-buttons-wrapper">
+            <div class="icon-wrapper">
+              <span class="typcn typcn-minus icon"></span>
+            </div>
+            <div class="item-counter-wrapper">
+              <span class="counter">2</span>
+            </div>
+            <div class="icon-wrapper">
+              <span class="typcn typcn-plus icon"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-wrapper" id="card">
+        <div class="hero-section-wrapper">
+          <div class="hero-image-wrapper">
+            <img src="./img/burger_hero_big.webp" class="item-hero-img" alt="item-hero-image" />
+          </div>
+        </div>
+        <div class="card-content-wrapper">
+          <div class="item-title"><span>Cheeseburgers</span></div>
+          <div class="item-description">
+            <span>In-house sauce, flaming chicken, and lettuce.</span>
+          </div>
+          <div class="item-price">$10</div>
+        </div>
+        <div class="card-actions-wrapper">
+          <div class="action-buttons-wrapper">
+            <div class="icon-wrapper">
+              <span class="typcn typcn-minus icon"></span>
+            </div>
+            <div class="item-counter-wrapper">
+              <span class="counter">2</span>
+            </div>
+            <div class="icon-wrapper">
+              <span class="typcn typcn-plus icon"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>>
+    <section class="order-actions-container">
+      <!-- Order Summary Component -->
+      <section class="summary-component" id="summaryComponent">
+        <h3 class="summary-heading" id="summaryHeading">Your Order</h3>
+        <div class="summary-items-container" id="summaryItemsContainer">
+          <div class="summary-item" id="summaryItem">
+            <p class="summary-item-name" id="summaryItemName">Pizza</p>
+            <button class="remove-item" id="removeItem">remove</button>
+            <p class="item-price" id="itemPrice">$10</p>
+          </div>
+          <div class="summary-item" id="summaryItem">
+            <p class="summary-item-name" id="summaryItemName">Pizza</p>
+            <button class="remove-item" id="removeItem">remove</button>
+            <p class="item-price" id="itemPrice">$10</p>
+          </div>
+        </div>
+        <div class="total-container" id="totalContainer">
+          <p class="total-price-text" id="totalPriceText">Total Price:</p>
+          <p class="order-value" id="orderValue">$20</p>
+        </div>
+        <button class="place-order" id="placeOrder">Place Order</button>
+      </section>
+      <!-- Rating Component -->
+      <section class="rating-component" id="ratingComponent">
+        <p class="thanks-message" id="thanksMessage">
+          Thanks, Blastoise! Your order is on the way!
+        </p>
+        <div class="rating" id="rating">🍔 🍔 🍔 🍔 🍔</div>
+        <p class="rating-message" id="ratingMessage">Rate your Order!</p>
+      </section>
+
+    </section>
     <script src="index.js"></script>
-  </body>
+</body>
+
 </html>
