@@ -58,7 +58,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--clr__gray-dark);
+  background-color: var(--clr__gray-light);
   font-family: var(--ff-primary);
 }
 
@@ -114,6 +114,10 @@ img {
   flex-direction: column;
   gap: 1em;
   padding: 1em 0.5em;
+  max-width: 600px;
+  align-items: center;
+  margin: 0 auto;
+  background-color: var(--clr__gray-dark);
 }
 
 /* SECTION Ordering Area*/
@@ -323,8 +327,33 @@ img {
   box-shadow: var(--shadow__plated);
   border-radius: var(--border__radius-primary);
   font-size: var(--fs-base);
+  align-items: center;
 }
 
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 80%;
+}
+
+.form__heading {
+  text-align: center;
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+.form-field {
+  border: none;
+  font-family: var(--ff-primary);
+  color: var(--clr__accent-dark);
+  border-radius: var(--border__radius-primary);
+  box-shadow: var(--shadow__embedded);
+  background-color: var(--clr__gray-light);
+  padding: 1em;
+}
 
 
 /* SECTION Buttons */
@@ -337,11 +366,12 @@ img {
   box-shadow: var(--shadow__plated);
   border-radius: var(--border__radius-primary);
   border: none;
+  padding: 0.75em 0.5em;
 }
 
 .place-order-btn {
   font-size: var(--fs-l);
-  padding: 0.75em 0.5em;
+
 
 }
 
