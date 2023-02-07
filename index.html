@@ -8,11 +8,12 @@
 </head>
 
 <body>
+  <header class="header" id="header">
+    <h1 class="heading">codeBros</h1>
+    <p class="sub-heading">Order. Eat. Code. Repeat.</p>
+    <div class="header__hero-image"></div>
+  </header>
   <div class="app-container" id="appContainer">
-    <header class="header" id="header">
-      <h1 class="heading">Mon's Diner</h1>
-      <p class="sub-heading">Order Pokemon themed food.</p>
-    </header>
     <section class="items-container" id="foodItemsContainer">
       <!-- Food Items -->
       <div class="card-wrapper" id="card">
@@ -96,7 +97,7 @@
           </div>
         </div>
       </div>
-    </section>>
+    </section>
     <section class="order-actions-container">
       <!-- Order Summary Component -->
       <section class="summary-component" id="summaryComponent">
@@ -104,28 +105,66 @@
         <div class="summary-items-container" id="summaryItemsContainer">
           <div class="summary-item" id="summaryItem">
             <p class="summary-item-name" id="summaryItemName">Pizza</p>
-            <button class="remove-item" id="removeItem">remove</button>
+            <!-- Add Remove -->
+            <div class="card-actions-wrapper-summary">
+              <div class="action-buttons-wrapper">
+                <div class="icon-wrapper">
+                  <span class="typcn typcn-minus icon"></span>
+                </div>
+                <div class="item-counter-wrapper">
+                  <span class="counter">2</span>
+                </div>
+                <div class="icon-wrapper">
+                  <span class="typcn typcn-plus icon"></span>
+                </div>
+              </div>
+            </div>
+            <!-- Add Remove -->
+            <!-- <button class="remove-item-btn btn" id="removeItem">remove</button> -->
             <p class="item-price" id="itemPrice">$10</p>
           </div>
           <div class="summary-item" id="summaryItem">
             <p class="summary-item-name" id="summaryItemName">Pizza</p>
-            <button class="remove-item" id="removeItem">remove</button>
+            <!-- Add Remove -->
+            <div class="card-actions-wrapper-summary">
+              <div class="action-buttons-wrapper">
+                <div class="icon-wrapper">
+                  <span class="typcn typcn-minus icon"></span>
+                </div>
+                <div class="item-counter-wrapper">
+                  <span class="counter">2</span>
+                </div>
+                <div class="icon-wrapper">
+                  <span class="typcn typcn-plus icon"></span>
+                </div>
+              </div>
+            </div>
+            <!-- Add Remove -->
+            <!-- <button class="remove-item-btn btn" id="removeItem">remove</button> -->
             <p class="item-price" id="itemPrice">$10</p>
           </div>
+
         </div>
         <div class="total-container" id="totalContainer">
           <p class="total-price-text" id="totalPriceText">Total Price:</p>
           <p class="order-value" id="orderValue">$20</p>
         </div>
-        <button class="place-order" id="placeOrder">Place Order</button>
+        <button class="place-order-btn btn" id="placeOrder">Place Order</button>
       </section>
       <!-- Rating Component -->
       <section class="rating-component" id="ratingComponent">
         <p class="thanks-message" id="thanksMessage">
-          Thanks, Blastoise! Your order is on the way!
+          <span class="thanks-span">On the way!</span> Rate your Experience
         </p>
         <div class="rating" id="rating">🍔 🍔 🍔 🍔 🍔</div>
-        <p class="rating-message" id="ratingMessage">Rate your Order!</p>
+      </section>
+      <!-- Checkout Component -->
+      <section class="checkout-container">
+        <form class="checkout-form">
+          <label for="">Name</label>
+          <input type="text" />
+        </form>
+
       </section>
 
     </section>

@@ -7,9 +7,11 @@
 
   --clr__gray-light: #a1a1aa;
   --clr__gray-dark: #71717a;
-  --clr__black: #000000;
-  --clr__accent: #f3b022;
-  --clr__accent-light: #d5a743;
+  --clr__gray-darker: #52525b;
+  --clr__black: #27272a;
+  --clr__accent-dark: #eab308;
+  --clr__accent: #facc15;
+  --clr__accent-light: #fde047;
   --clr__error: #f34822;
   --clr__warning: #f04aff;
 
@@ -17,10 +19,14 @@
     inset 0px -3px 5px hsla(0, 0%, 100%, 0.347);
   --shadow__plated: 0px 2px 4px#4a4f57,
     inset 0px 2.5px 1px hsla(0, 0%, 100%, 0.347);
+  --shadow__plated--bottom: 0px 2px 4px#4a4f57;
 
-  --ff-headings: "Fira Sans";
+  --border__radius-primary: 0.25em;
+
+  --ff-headings: "Fira Code";
   --ff-primary: "Fira Code";
-  /* 
+
+  /* TODO make this decision later
   --ff-headings: "Fira Code";
   --ff-primary: "Fira Sans"; */
 
@@ -41,7 +47,10 @@
   }
 }
 
-/* General Styles */
+
+
+
+/* ANCHOR General Styles */
 * {
   box-sizing: border-box;
 }
@@ -53,19 +62,61 @@ body {
   font-family: var(--ff-primary);
 }
 
-
-/* Layout */
-.app-container {
-  display: flex;
-  flex-direction: column;
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 500;
 }
 
-/* Header */
+img {
+  display: block;
+  width: 100%;
+}
+
+
+
+/*ANCHOR Header */
+.header {
+  /* border-bottom: 0.5px solid var(--clr__gray-darker); */
+  box-shadow: var(--shadow__plated--bottom);
+  background-color: var(--clr__accent-dark);
+  color: var(--clr__black);
+  display: grid;
+  grid: repeat(2, 1fr)/ repeat(12, 1fr);
+  padding: 0.2em 1em;
+  padding-right: 0;
+}
+
+.header__hero-image {
+  grid-column: 10/13;
+  grid-row: 1/4;
+  background: url("./img/1540364457.svg");
+  background-size: cover;
+  z-index: 1;
+}
+
 .heading {
+  grid-column: 1/5;
+  grid-row: 2/3;
   font-family: var(--ff-headings);
 }
 
-/* Ordering Menu*/
+.sub-heading {
+  margin: 0;
+  grid-column: 1/10;
+  grid-row: 3/4;
+}
+
+/* ANCHOR Main Layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em 0.5em;
+}
+
+/* SECTION Ordering Area*/
 .items-container {
   padding-left: 10px;
   padding-right: 10px;
@@ -92,14 +143,14 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  border-radius: 0.25em;
+  border-radius: var(--border__radius-primary);
   box-shadow: var(--shadow__embedded);
   background-color: var(--clr__gray-light);
   padding: 1.2em 1em;
   gap: 1.25em;
 }
 
-/* ! Level 2: Wrappers: Individual */
+/* Level 2: Wrappers: Individual */
 
 .hero-section-wrapper {
   flex: 1;
@@ -118,7 +169,7 @@ body {
   justify-content: center;
 }
 
-/* ! Hero Section */
+/* Card Hero Section */
 .hero-section-wrapper,
 .hero-image-wrapper {
   display: flex;
@@ -138,7 +189,7 @@ body {
   border: 1px solid var(--clr__gray-light);
 }
 
-/* ! Card Content Section*/
+/* Card Content Section*/
 
 .item-title {
   font-weight: 500;
@@ -185,4 +236,123 @@ body {
   font-size: 1rem;
 }
 
-/* Checkout */
+/* ANCHOR Checkout Area*/
+
+/* ANCHOR Summary Component */
+.summary-component {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr__gray-dark);
+  box-shadow: var(--shadow__plated);
+  border-radius: var(--border__radius-primary);
+  font-size: var(--fs-base);
+}
+
+
+/* .summary-items-container {
+  display: flex;
+  
+} */
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  display: grid;
+  grid: repeat(1, 1fr)/ repeat(12, 1fr);
+}
+
+.summary-item-name {
+  grid-column: 1/3;
+  font-size: var(--fs-l);
+}
+
+.remove-item-btn {
+  grid-column: 6/9;
+}
+
+.card-actions-wrapper-summary {
+  grid-column: 3/5;
+  background-color: var(--clr__gray-light);
+  border-radius: var(--border__radius-primary);
+  font-size: var(--fs-sm);
+}
+
+
+
+.item-price {
+  grid-column: 12/13;
+}
+
+.order-value {
+  margin-left: ;
+}
+
+.total-container {
+  font-size: var(--fs-l);
+  border-top: 2px solid var(--clr__gray-darker);
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+/* ANCHOR Rating Component */
+.rating-component {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: var(--fs-l);
+}
+
+.thanks-span {
+  display: block;
+  color: var(--clr__accent);
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+/* SECTION Checkout form */
+
+.checkout-container {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr__gray-dark);
+  box-shadow: var(--shadow__plated);
+  border-radius: var(--border__radius-primary);
+  font-size: var(--fs-base);
+}
+
+
+
+/* SECTION Buttons */
+/* ANCHOR Primary Button */
+
+
+.btn {
+  font-family: var(--ff-primary);
+  background-color: var(--clr__accent);
+  box-shadow: var(--shadow__plated);
+  border-radius: var(--border__radius-primary);
+  border: none;
+}
+
+.place-order-btn {
+  font-size: var(--fs-l);
+  padding: 0.75em 0.5em;
+
+}
+
+/* ANCHOR Remove Button */
+.remove-item-btn {
+  background-color: var(--clr__gray-dark);
+  box-shadow: none;
+}
+
+
+/* ANCHOR Temporary Display Styles */
+/* .items-container {
+  display: none;
+} */
