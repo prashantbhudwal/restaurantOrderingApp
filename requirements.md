@@ -10,7 +10,7 @@ Design : https://www.figma.com/file/Hdgwo69Dym9vVsxbuPbl0h/Mobile-Restaurant-Men
 
 ## Order Page
 
-[headerComonent]
+[headerComponent]
 
 - Title
 - Subtitle
@@ -41,9 +41,9 @@ Design : https://www.figma.com/file/Hdgwo69Dym9vVsxbuPbl0h/Mobile-Restaurant-Men
 - Total Price
   - When Total Price goes over a certain value, give user a 15% discount.
 - Complete Order Button
-  - When clicked, opens [payementModal]
+  - When clicked, opens [paymentModal]
 
-### [payementModal]
+### [paymentModal]
 
 - Enter Cart Details into form
   - Name

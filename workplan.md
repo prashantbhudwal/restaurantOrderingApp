@@ -11,7 +11,7 @@
     8. Create & Style Modal Component
        1. Temporarily display it under the Rating Component
        2. Validate Modal Component
-    9.  Display OrderCart on cliking Plus
+    9.  Display OrderCart on clicking Plus
     10. Display Modal on clicking Place Order
     11. Hide Modal, and Show Ratings Components at the place of OrderCart Component
 
@@ -22,11 +22,11 @@
   - One for Items
     - To hold Item divs
   - One for Checkout
-    - To conditonally hold
+    - To conditionally hold
       - Nothing: Pre Checkout
       - OrderCart: During Checkout
       - Ratings: Post Checkout
-- The Modal Will be a searate container that will overlay on the app.
+- The Modal Will be a separate container that will overlay on the app.
   - It will also be flexbox based.
 
 ## Logic Estimates
