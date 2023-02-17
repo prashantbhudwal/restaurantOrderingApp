@@ -1,4 +1,5 @@
 let foodItemsArray = [];
+// TODO shorten the description
 export default foodItemsArray = [
   {
     name: "The Bug Squasher Calzone",
