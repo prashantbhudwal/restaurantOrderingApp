@@ -1,7 +1,13 @@
 const getItemOperation = function (id) {
   const idSubstringArray = id.split("-", 2);
-  const operation = idSubstringArray[1];
-  return operation.toString();
+  let operation = idSubstringArray[1];
+  operation =
+    operation.toString() === "addItem"
+      ? "add"
+      : operation.toString() === "removeItem"
+      ? "subtract"
+      : null;
+  return operation;
 };
 
 const getCardId = function (id) {
@@ -11,9 +17,9 @@ const getCardId = function (id) {
 
 const getClickInformation = function checkWhereTheClickComesFrom(event) {
   const eventTargetId = event.target.id;
-  const cardId = getCardId(eventTargetId);
+  const itemId = getCardId(eventTargetId);
   const itemOperation = getItemOperation(eventTargetId);
-  return { cardId, itemOperation };
+  return { itemId, itemOperation };
 };
 
 export default getClickInformation;
