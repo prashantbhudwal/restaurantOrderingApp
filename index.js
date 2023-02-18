@@ -20,29 +20,21 @@ const getNewCount = function (itemOperation, currentCount) {
       : itemOperation === "subtract"
       ? currentCount - 1
       : null;
-  return newCount;
+  return Math.max(newCount, 0);
 };
 
-const updateCountState = function (newCount, itemId) {
-  let itemState = getItemStateObject(itemId);
-  console.log(itemState);
-//   TODO I have no idea what is happening here.
-  itemState.count += newCount; 
-  return itemState.count;
-};
-
-const getCurrentCount = function (itemId) {
+const updateCart = function (event) {
+  const { itemCountElement, itemOperation, itemId } =
+    getClickInformation(event);
   const itemState = getItemStateObject(itemId);
-  return itemState.id;
+  const currentCount = itemState.count;
+  const newCount = getNewCount(itemOperation, currentCount);
+  itemState.count = newCount; //Updates state
+  itemCountElement.innerText = itemState.count; // Updates UI
 };
 
 const handleClick = function (event) {
-  const { itemCountElement, itemOperation, itemId } =
-    getClickInformation(event);
-
-  const currentCount = getCurrentCount(itemId);
-  const newCount = getNewCount(itemOperation, currentCount);
-  itemCountElement.innerText = updateCountState(newCount, itemId);
+  updateCart(event);
 };
 
 element.cardContainer.addEventListener("click", handleClick);
