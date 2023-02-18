@@ -3,7 +3,6 @@ import element from "./DomElements.js";
 
 const getCardHtml = function getCardHtml(item) {
   const { name, ingredients, id, price, imgName, description, count } = item;
-  // TODO Find and dynamically render images
   return /*HTML*/ `<div class="card-wrapper" id="card-${id}">
         <div class="hero-section-wrapper">
           <div class="hero-image-wrapper">
@@ -23,7 +22,7 @@ const getCardHtml = function getCardHtml(item) {
               <span class="typcn typcn-minus icon" id ="${id}-removeItem"></span>
             </div>
             <div class="item-counter-wrapper">
-              <span class="counter">${count}</span>
+              <span class="counter" id = "counter-${id}">${count}</span>
             </div>
             <div class="icon-wrapper">
               <span class="typcn typcn-plus icon" id ="${id}-addItem"></span>

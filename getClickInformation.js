@@ -10,16 +10,24 @@ const getItemOperation = function (id) {
   return operation;
 };
 
-const getCardId = function (id) {
+const getItemId = function (id) {
   const cardId = id.split("-", 1).join();
   return parseInt(cardId);
 };
 
+const getItemCountId = function (itemId) {
+  return `counter-${itemId}`;
+};
+
 const getClickInformation = function checkWhereTheClickComesFrom(event) {
   const eventTargetId = event.target.id;
-  const itemId = getCardId(eventTargetId);
+  const eventTargetElement = document.getElementById(eventTargetId);
+  //   const eventTargetParent = eventTargetElement.parentElement.parentElement;
+  const itemId = getItemId(eventTargetId);
+  const itemCountId = getItemCountId(itemId);
+  const itemCountElement = document.getElementById(itemCountId);
   const itemOperation = getItemOperation(eventTargetId);
-  return { itemId, itemOperation };
+  return { itemCountElement, itemOperation, itemId };
 };
 
 export default getClickInformation;

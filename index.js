@@ -5,33 +5,44 @@ import foodItemsArray from "./data.js";
 
 renderFoodItemCards();
 
-const increaseByOne = (item) => (item += 1);
-const decreaseByOne = (item) => (item -= 1);
+const getItemStateObject = function (itemId) {
+  const filteredItemsArray = foodItemsArray.filter((item) => {
+    return item.id === itemId;
+  });
+  const itemStateObject = filteredItemsArray[0];
+  return itemStateObject;
+};
 
 const getNewCount = function (itemOperation, currentCount) {
   const newCount =
     itemOperation === "add"
-      ? increaseByOne(currentCount)
+      ? currentCount + 1
       : itemOperation === "subtract"
-      ? decreaseByOne(currentCount)
+      ? currentCount - 1
       : null;
   return newCount;
 };
 
-const handleClick = function (event) {
-  const { itemId, itemOperation } = getClickInformation(event);
-  //   console.log(itemId);
-  //   console.log(itemOperation);
+const updateCountState = function (newCount, itemId) {
+  let itemState = getItemStateObject(itemId);
+  console.log(itemState);
+//   TODO I have no idea what is happening here.
+  itemState.count += newCount; 
+  return itemState.count;
+};
 
-  //  TODO const currentCount = f(itemId);
+const getCurrentCount = function (itemId) {
+  const itemState = getItemStateObject(itemId);
+  return itemState.id;
+};
+
+const handleClick = function (event) {
+  const { itemCountElement, itemOperation, itemId } =
+    getClickInformation(event);
+
+  const currentCount = getCurrentCount(itemId);
   const newCount = getNewCount(itemOperation, currentCount);
-  
-  // Update elements based on new count
-  //   foodItemsArray[0].count = foodItemsArray[0].count + 5;
-  //   document
-  //     .querySelector
-  //     // TODO"#card-2>.card-actions-wrapper>.item-counter-wrapper>.action-buttons-wrapper"
-  //     ().innerHTML = foodItemsArray[0].count;
+  itemCountElement.innerText = updateCountState(newCount, itemId);
 };
 
 element.cardContainer.addEventListener("click", handleClick);
