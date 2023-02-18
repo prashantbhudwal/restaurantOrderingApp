@@ -7,7 +7,7 @@ const getCardHtml = function getCardHtml(item) {
   return /*HTML*/ `<div class="card-wrapper" id="card-${id}">
         <div class="hero-section-wrapper">
           <div class="hero-image-wrapper">
-            <img src="./img/burger.webp" class="item-hero-img" alt="item-hero-image" />
+            <img src="./img/${imgName}" class="item-hero-img" alt="item-hero-image" />
           </div>
         </div>
         <div class="card-content-wrapper">

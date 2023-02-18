@@ -15,7 +15,7 @@ export default foodItemsArray = [
     ingredients: ["beef patty", "cheddar cheese", "bacon", "lettuce"],
     id: 1,
     price: 10,
-    imgName: "burger.webp",
+    imgName: "burger.jpg",
     description:
       "Satisfy your hunger with our Binary Burger, topped with cheddar cheese, bacon, and lettuce.",
     count: 0,
